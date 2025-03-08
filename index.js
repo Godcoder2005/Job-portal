@@ -1,8 +1,15 @@
 import express from "express"
-import mongoose from "mongoose"
+import dotenv from "dotenv"
+import connectDB from "./config/db.js";
 
 const app = express();
-const PORT = 3080
+
+//Data base connection 
+connectDB();
+
+dotenv.config();
+
+const PORT = process.env.PORT || 3080
 
 app.listen(PORT,()=>{
     try {
@@ -15,3 +22,4 @@ app.listen(PORT,()=>{
 app.get('/',(req,res)=>{
     res.send("<h1>Job portal project starts here</h1>")
 })
+

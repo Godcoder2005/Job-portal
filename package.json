@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Godcoder2005/Job-portal#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "mongoose": "^8.12.1",
