@@ -1,0 +1,27 @@
+{
+  "name": "job-portal",
+  "version": "1.0.0",
+  "description": "Software engineering project\r <br>\r Created by Akshith",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godcoder2005/Job-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Godcoder2005/Job-portal/issues"
+  },
+  "homepage": "https://github.com/Godcoder2005/Job-portal#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9"
+  }
+}
