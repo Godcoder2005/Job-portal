@@ -5,13 +5,22 @@ import cors from "cors"
 import morgan from "morgan"
 //file imports 
 import connectDB from "./config/db.js";
-import testRoutes from "./routes/testroutes.js"
+//routes
+import testRoutes from "./routes/testroutes.js";
+import authroutes from "./routes/authroutes.js";
 
 const app = express();
+
+// middlewares
+app.use(express.json())
+app.use(cors())
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'))
 
 //Data base connection 
 connectDB();
 
+//Dot env config
 dotenv.config();
 
 const PORT = process.env.PORT || 3080
@@ -22,11 +31,7 @@ const PORT = process.env.PORT || 3080
 
 // routes 
 app.use('/api/v1/test',testRoutes)
-
-// middlewares
-app.use(express.json())
-app.use(cors())
-app.use(morgan('dev'))
+app.use('/api/v1/auth',authroutes)
 
 app.listen(PORT,()=>{
     try {
