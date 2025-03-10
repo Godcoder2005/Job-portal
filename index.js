@@ -8,6 +8,7 @@ import connectDB from "./config/db.js";
 //routes
 import testRoutes from "./routes/testroutes.js";
 import authroutes from "./routes/authroutes.js";
+import errormiddleware from "./middleware/errormiddleware.js";
 
 const app = express();
 
@@ -33,6 +34,10 @@ const PORT = process.env.PORT || 3080
 app.use('/api/v1/test',testRoutes)
 app.use('/api/v1/auth',authroutes)
 
+//validation middlewares
+app.use(errormiddleware)
+
+//listening port
 app.listen(PORT,()=>{
     try {
         console.log("Server has been started")
